@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pulse-server
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      - key: NODE_ENV
+        value: production
+        
